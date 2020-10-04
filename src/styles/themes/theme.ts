@@ -18,8 +18,8 @@ export class ProjectDefaultTheme implements DefaultTheme {
 }
 
 export class darkTheme extends ProjectDefaultTheme {
-    primaryColor = '#333';
-    secondaryColor = '#666';
+    primaryColor = '#000000';
+    secondaryColor = '#FFFFFF';
 }
 
 export class lightTheme extends ProjectDefaultTheme {

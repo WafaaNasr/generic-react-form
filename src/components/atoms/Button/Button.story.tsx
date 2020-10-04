@@ -2,16 +2,16 @@ import React from "react";
 import { storiesOf } from "@storybook/react"
 
 import StoryContainer from '../../../../.storybook/components/StoryContainer/StoryContainer';
-import Label from './Label';
+import Button from './Button';
 
 
 
 
-storiesOf("atoms/Label", module)
+storiesOf("atoms/Button", module)
     .add(
-        'Label',
+        'Primary Button',
         () => (
             <StoryContainer>
-                <Label htmlFor='wafaa'>Wafaa</Label>
+                <Button onClick={()=>{}}>Click me!</Button>
             </StoryContainer>
         ));

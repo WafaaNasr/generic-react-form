@@ -1,10 +1,11 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 
-
-import { FormContainer } from './Form.styles';
-import { FormProps } from './Form.types';
 import TextField from '../../molecules/TextField/TextField';
+import Button from '../../atoms/Button/Button';
+
+import { FormProps } from './Form.types';
+import { FormContainer } from './Form.styles';
 
 const Form = () => {
     const { handleSubmit, register } = useForm<FormProps>({
@@ -35,7 +36,7 @@ const Form = () => {
             register={register}
             onTextChange={(e) => {}} /> 
 
-        <button type="submit">Submit</button>
+            <Button type='submit'>Submit</Button>
     </FormContainer>
 };
 
