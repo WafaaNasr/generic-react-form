@@ -1,19 +1,26 @@
-import React from 'react';
-import Label from '../../atoms/Label/Label';
+import React, { useState } from 'react';
 
+import Label from '../../atoms/Label/Label';
+import { ReturnedReactComponent } from '../../../common.types';
+import { TextFieldProps } from './TextField.types';
 import {
     TextFieldContainer,
     TextFieldWrapper
 } from './TextField.styles';
 
 
-const TextField = () => {
+const TextField = ({ name, type, label, onTextChange, ...otherProps }: TextFieldProps): ReturnedReactComponent => {
 
+    if (!name || !label || !type || !onTextChange) {
+        return null;
+    }
     return (
         <TextFieldContainer>
-            {/* TODO add for or otherProps */}
-            <Label>Name</Label>
-            <TextFieldWrapper name="name" type="text" />
+            <Label key={name} name={name} htmlFor={name}>{label}</Label>
+            <TextFieldWrapper
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => onTextChange(e)}
+                {...otherProps}
+            />
         </TextFieldContainer>
     );
 };

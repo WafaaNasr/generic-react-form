@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { FC } from 'react';
 
+import { ReturnedReactComponent } from '../../../common.types';
 import { LabelProps } from './Label.types';
 import {
     LabelContainer,
     LabelWrapper
 } from './Label.styles';
 
-const Label = ({ children }: LabelProps) => {
+const Label: FC<LabelProps> = ({ children, ...otherProps }): ReturnedReactComponent => {
+    if (!children)
+        return null;
+        
     return <LabelContainer>
-             <LabelWrapper>{children}</LabelWrapper>
-        </LabelContainer>
+        <LabelWrapper {...otherProps}>{children}</LabelWrapper>
+    </LabelContainer>
 };
 
 export default Label;
