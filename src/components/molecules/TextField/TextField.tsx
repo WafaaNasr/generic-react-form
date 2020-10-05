@@ -11,7 +11,7 @@ import {
 
 const TextField = ({ name, type, label, onTextChange, register, rules = {}, ...otherProps }: TextFieldProps): ReturnedReactComponent => {
 
-    if (!name || !label || !type || !register || !onTextChange) {
+    if (!name || !label || !type  || !onTextChange) {
         return null;
     }
     return (
