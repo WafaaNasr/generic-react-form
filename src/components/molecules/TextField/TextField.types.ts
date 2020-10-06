@@ -6,6 +6,7 @@ export type TextFieldProps =
     Partial<Pick<UseFormMethods, "register" | "errors">> & {
         placeholder: string;
         type: string;
+        key:string;
         label: string,
         name: string,
         rules?: ValidationRules;

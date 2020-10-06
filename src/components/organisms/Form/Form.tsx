@@ -6,37 +6,31 @@ import Button from '../../atoms/Button/Button';
 
 import { FormProps } from './Form.types';
 import { FormContainer } from './Form.styles';
+import { ReturnedReactComponent } from '../../../common.types';
 
-const Form = () => {
-    const { handleSubmit, register } = useForm<FormProps>({
+const Form = ({ textFields }: FormProps): ReturnedReactComponent => {
+
+    const { handleSubmit, register } = useForm<{}>({
         defaultValues: {
-          username: 'joy',
-          password:'doe'
-        }});
 
+        }
+    });
+
+    if (!textFields) {
+        return null
+    }
 
     const onSubmit = handleSubmit((data) => {
         console.log(data);
     });
     return <FormContainer onSubmit={onSubmit}>
-       
-         <TextField
-            type="text"
-            placeholder="Wafaa"
-            name="username"
-            label="Username"
-            register={register}
-            onTextChange={(e) =>{} } />
-
-        <TextField
-            type="password"
-            placeholder="Please enter a valid password"
-            name="password"
-            label="Password"
-            register={register}
-            onTextChange={(e) => {}} /> 
-
-            <Button type='submit'>Submit</Button>
+        {
+            textFields.map(textField => (<TextField
+                {...textField}
+                register={register}
+            />))
+        }
+        <Button type='submit'>Submit</Button>
     </FormContainer>
 };
 

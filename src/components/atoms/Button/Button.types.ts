@@ -1,3 +1,3 @@
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-    onClick: () => {}
+    onClick?: () => {}
 }
