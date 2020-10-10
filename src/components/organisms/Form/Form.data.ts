@@ -9,7 +9,7 @@ export const formData: FormProps = {
             type: 'string',
             label: 'Username',
             name: 'username',
-            rules: {},
+            rules: { required: 'Please enter username' },
             onTextChange: () => { }
         },
         {
@@ -18,7 +18,7 @@ export const formData: FormProps = {
             type: 'password',
             label: 'Password',
             name: 'password',
-            rules: {},
+            rules: { required: 'Please enter password' },
             onTextChange: () => { }
         },
     ]

@@ -1,4 +1,4 @@
-import { ValidationRules, UseFormMethods } from "react-hook-form";
+import { ValidationRules, UseFormMethods, FieldErrors } from "react-hook-form";
 
 
 export type TextFieldProps =
@@ -6,10 +6,11 @@ export type TextFieldProps =
     Partial<Pick<UseFormMethods, "register" | "errors">> & {
         placeholder: string;
         type: string;
-        key:string;
         label: string,
         name: string,
-        rules?: ValidationRules;
+        rules: ValidationRules;
+        key?:string;
+        error?:FieldErrors;
         onTextChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     }
 

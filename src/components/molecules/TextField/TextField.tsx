@@ -9,11 +9,12 @@ import {
 } from './TextField.styles';
 
 
-const TextField = ({ name, type, label, onTextChange, register, rules = {}, ...otherProps }: TextFieldProps): ReturnedReactComponent => {
+const TextField = ({ name, type, label, onTextChange, register, rules, error = {}, ...otherProps }: TextFieldProps): ReturnedReactComponent => {
 
-    if (!name || !label || !type  || !onTextChange) {
+    if (!name || !label || !type || !onTextChange) {
         return null;
     }
+    console.log(error)
     return (
         <TextFieldContainer>
             <Label htmlFor={name}>{label}</Label>
@@ -23,9 +24,10 @@ const TextField = ({ name, type, label, onTextChange, register, rules = {}, ...o
                 name={name}
                 type={type}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => onTextChange(e)}
-                ref={register}
+                ref={register(rules)}
                 {...otherProps}
             />
+            { error && <div>{error.message}</div>}
         </TextFieldContainer>
     );
 };

@@ -1,6 +1,7 @@
 import { DefaultTheme } from 'styled-components';
 
 import { ITypography, Typography } from './configs/typography';
+import Colors from './configs/colors';
 
 
 declare module "styled-components" {
@@ -8,13 +9,15 @@ declare module "styled-components" {
         primaryColor: string,
         secondaryColor: string
         typography: ITypography,
+        colors: typeof Colors
     }
 }
 
 export class ProjectDefaultTheme implements DefaultTheme {
     primaryColor = '#333';
     secondaryColor = '#666';
-    typography = { ...Typography }
+    typography = { ...Typography };
+    colors = Colors;
 }
 
 export class darkTheme extends ProjectDefaultTheme {
