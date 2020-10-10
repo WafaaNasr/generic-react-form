@@ -1,5 +1,4 @@
-import { FormProps } from "./Form.types";
-
+import { FormProps } from './Form.types';
 
 export const formData: FormProps = {
     textFields: [
@@ -10,7 +9,7 @@ export const formData: FormProps = {
             label: 'Username',
             name: 'username',
             rules: { required: 'Please enter username' },
-            onTextChange: () => { }
+            onTextChange: null,
         },
         {
             key: 'password',
@@ -19,8 +18,7 @@ export const formData: FormProps = {
             label: 'Password',
             name: 'password',
             rules: { required: 'Please enter password' },
-            onTextChange: () => { }
+            onTextChange: null,
         },
-    ]
-
-}
+    ],
+};

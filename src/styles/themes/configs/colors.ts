@@ -1,7 +1,6 @@
-
 const Colors = {
     gray: 'gray',
-    error:'#CF2626',
+    error: '#CF2626',
     message: {
         background: {
             warning: '#FFFCF7',
@@ -12,8 +11,8 @@ const Colors = {
             warning: '#735328',
             error: '#5D1111',
             info: '#012E4B',
-        }
-    }
-}
+        },
+    },
+};
 
 export default Colors;

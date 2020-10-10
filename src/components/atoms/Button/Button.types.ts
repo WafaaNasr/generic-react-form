@@ -1,4 +1,7 @@
+import { ReactNode } from 'react';
+
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-    onClick?: () => {}
-    parentHasErrors: boolean
-}
+    onClick?: () => void;
+    parentHasErrors: boolean;
+    children: ReactNode;
+};

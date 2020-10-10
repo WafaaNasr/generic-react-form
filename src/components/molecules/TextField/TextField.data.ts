@@ -1,11 +1,11 @@
-import { TextFieldProps } from "./TextField.types";
+import { TextFieldProps } from './TextField.types';
 
 const data: TextFieldProps = {
     placeholder: 'Wafaa',
     name: 'name',
     type: 'text',
     label: 'Name',
-    onTextChange: () => { }
-}
+    onTextChange: null,
+};
 
 export default data;

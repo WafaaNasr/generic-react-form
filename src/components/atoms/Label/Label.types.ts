@@ -1,5 +1,3 @@
-
-export type LabelProps =
-    React.LabelHTMLAttributes<HTMLLabelElement> & {
-        htmlFor: string
-    }
+export type LabelProps = React.LabelHTMLAttributes<HTMLLabelElement> & {
+    htmlFor: string;
+};

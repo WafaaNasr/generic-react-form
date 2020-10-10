@@ -10,6 +10,7 @@
     "@types/node": "^14.11.2",
     "@types/react": "^16.9.50",
     "@types/react-dom": "^16.9.8",
+    "eslint-plugin-react": "^7.21.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.9.0",
@@ -23,10 +24,22 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start-storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "lint": "eslint '*/**/*.{ts,tsx}' --quiet --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "yarn test",
+      "git add"
+    ]
   },
   "browserslist": {
     "production": [
@@ -41,8 +54,15 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.0.26",
     "@storybook/react": "^6.0.22",
     "@types/storybook__react": "^5.2.1",
-    "@types/styled-components": "^5.1.3"
+    "@types/styled-components": "^5.1.3",
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/parser": "^4.4.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.2"
   }
 }

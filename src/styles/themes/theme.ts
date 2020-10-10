@@ -3,13 +3,12 @@ import { DefaultTheme } from 'styled-components';
 import { ITypography, Typography } from './configs/typography';
 import Colors from './configs/colors';
 
-
-declare module "styled-components" {
+declare module 'styled-components' {
     export interface DefaultTheme {
-        primaryColor: string,
-        secondaryColor: string
-        typography: ITypography,
-        colors: typeof Colors
+        primaryColor: string;
+        secondaryColor: string;
+        typography: ITypography;
+        colors: typeof Colors;
     }
 }
 
