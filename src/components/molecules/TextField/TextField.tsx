@@ -1,11 +1,13 @@
 import React from 'react';
 
 import Label from '../../atoms/Label/Label';
+
 import { ReturnedReactComponent } from '../../../common.types';
 import { TextFieldProps } from './TextField.types';
 import {
     TextFieldContainer,
-    TextFieldWrapper
+    TextFieldWrapper,
+    ValidationMessage
 } from './TextField.styles';
 
 
@@ -14,20 +16,20 @@ const TextField = ({ name, type, label, onTextChange, register, rules, error = {
     if (!name || !label || !type || !onTextChange) {
         return null;
     }
-    console.log(error)
     return (
         <TextFieldContainer>
             <Label htmlFor={name}>{label}</Label>
             <TextFieldWrapper
+                {...otherProps}
                 id={name}
                 key={name}
                 name={name}
                 type={type}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => onTextChange(e)}
-                ref={register(rules)}
-                {...otherProps}
+                ref={register && register(rules)}
+                error={error.message}
             />
-            { error && <div>{error.message}</div>}
+            { error && error.message && <ValidationMessage>{error.message}</ValidationMessage>}
         </TextFieldContainer>
     );
 };
