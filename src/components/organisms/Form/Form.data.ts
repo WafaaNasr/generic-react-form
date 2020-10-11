@@ -42,6 +42,6 @@ export const formData: FormProps<ISignInFormFields> = {
     onSubmitCb: (formData) => {
         console.log('Submitted', formData);
     },
-    successMessage:'Form Submitted Successfully!!!',
-    errorMessage:'Sorry, error occurred!.... Please try again'
+    successMessage: 'Form Submitted Successfully!!!',
+    errorMessage: 'Sorry, error occurred!.... Please try again',
 };

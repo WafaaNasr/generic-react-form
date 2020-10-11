@@ -19,7 +19,7 @@ const Form = <T extends Record<string, any>>({
     validationMode,
     onSubmitCb,
     successMessage,
-    errorMessage
+    errorMessage,
 }: FormProps<T>): ReturnedReactComponent => {
     const { handleSubmit, errors, formState, setValue, getValues, trigger } = useGenericForm<T>({
         formDefaultValues,

@@ -12,7 +12,7 @@ type MessageContainerProps = {
 
 export const MessageContainer = styled.div`
     display: flex;
-    width:100%;
+    width: 100%;
     align-content: flex-start;
     font: inherit;
     padding: 1rem;

@@ -6,6 +6,6 @@ export type FormProps<T> = IValidationFormFields<T> &
         formFields: TextFieldProps[];
         submitBtnLabel: string;
         onSubmitCb: (formData: T) => Promise<void> | void;
-        successMessage:string;
-        errorMessage:string;
+        successMessage: string;
+        errorMessage: string;
     };
