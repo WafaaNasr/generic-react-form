@@ -49,6 +49,8 @@ export const formDataWithInitial: FormProps<IRegisterFormFields> = {
     ),
     validationSchema: registerFormValidationSchema,
     onSubmitCb: () => console.log('form submitted'),
+    successMessage:'Register Submitted Successfully!!!',
+    errorMessage:'Sorry, error occurred!.... Please try again'
 };
 
 export const formDataWithOutInitial: FormProps<IRegisterFormFields> = {
@@ -94,4 +96,6 @@ export const formDataWithOutInitial: FormProps<IRegisterFormFields> = {
     validationSchema: registerFormValidationSchema,
     validationMode: 'all',
     onSubmitCb: () => console.log('form submitted'),
+    successMessage:'Register Submitted Successfully!!!',
+    errorMessage:'Sorry, error occurred!.... Please try again'
 };

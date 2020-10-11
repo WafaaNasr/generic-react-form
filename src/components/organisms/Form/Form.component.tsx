@@ -4,12 +4,12 @@ import useGenericForm from '../../../hooks/useGenericForm/useGenericForm';
 
 import TextField from '../../molecules/TextField/TextField.component';
 import Button from '../../atoms/Button/Button.component';
-import Message from '../../atoms/Message/Message';
+import Message from '../../atoms/Alert/Alert';
 
 import { FormProps } from './Form.types';
 import { FormContainer } from './Form.styles';
 import { ReturnedReactComponent } from '../../../common.types';
-import { MessageType } from '../../atoms/Message/Message.types';
+import { MessageType } from '../../atoms/Alert/Alert.types';
 
 const Form = <T extends Record<string, any>>({
     formFields,
@@ -18,6 +18,8 @@ const Form = <T extends Record<string, any>>({
     validationSchema,
     validationMode,
     onSubmitCb,
+    successMessage,
+    errorMessage
 }: FormProps<T>): ReturnedReactComponent => {
     const { handleSubmit, errors, formState, setValue, getValues, trigger } = useGenericForm<T>({
         formDefaultValues,
@@ -41,7 +43,7 @@ const Form = <T extends Record<string, any>>({
         setFormValues(getValues());
     };
     return formState.isSubmitSuccessful ? (
-        <Message text="Form submitted successfully" messageType={MessageType.Info} />
+        <Message text={successMessage} messageType={MessageType.Success} />
     ) : (
         <FormContainer onSubmit={handleSubmit(onSubmitCb)}>
             {formFields.map((textField) => (

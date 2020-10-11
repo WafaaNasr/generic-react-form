@@ -1,8 +1,8 @@
 import React from 'react';
 import { ReturnedReactComponent } from '../../../common.types';
 
-import { MessageContainer, ChildrenWrapper } from './Message.styles';
-import { MessageProps, MessageType } from './Message.types';
+import { MessageContainer, ChildrenWrapper } from './Alert.styles';
+import { MessageProps, MessageType } from './Alert.types';
 
 const Message = ({ messageType = MessageType.Info, text }: MessageProps): ReturnedReactComponent => {
     if (!text) {
