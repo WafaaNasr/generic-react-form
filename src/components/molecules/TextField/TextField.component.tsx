@@ -11,8 +11,6 @@ const TextField = ({
     type,
     label,
     onTextChange,
-    register,
-    rules,
     error = {},
     ...otherProps
 }: TextFieldProps): ReturnedReactComponent => {
@@ -28,7 +26,6 @@ const TextField = ({
                 name={name}
                 type={type}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => onTextChange && onTextChange(e)}
-                ref={register && register(rules)}
                 error={error.message}
             />
             {error && error.message && <ValidationMessage>{error.message}</ValidationMessage>}

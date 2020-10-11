@@ -1,6 +1,6 @@
 import { FormProps } from '../../components/organisms/Form/Form.types';
-import { IRegister } from './Register';
+import { IRegisterFormFields } from './RegisterFormFields';
 
 export type RegisterFormProps = {
-    registerFormFields: FormProps<IRegister>;
+    registerFormFields: FormProps<IRegisterFormFields>;
 };

@@ -4,10 +4,16 @@ import { storiesOf } from '@storybook/react';
 import StoryContainer from '../../../.storybook/components/StoryContainer/StoryContainer';
 
 import Register from './Register.page';
-import { formData } from './Register.data';
+import { formDataWithInitial, formDataWithOutInitial } from './Register.data';
 
-storiesOf('pages/Register', module).add('Register', () => (
-    <StoryContainer>
-        <Register registerFormFields={formData} />
-    </StoryContainer>
-));
+storiesOf('pages/Register', module)
+    .add('Register with initial data', () => (
+        <StoryContainer>
+            <Register registerFormFields={formDataWithInitial} />
+        </StoryContainer>
+    ))
+    .add('Register without initial data ', () => (
+        <StoryContainer>
+            <Register registerFormFields={formDataWithOutInitial} />
+        </StoryContainer>
+    ));

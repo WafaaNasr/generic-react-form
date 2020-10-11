@@ -1,22 +1,20 @@
 import { FormProps } from '../../components/organisms/Form/Form.types';
-import { IRegister, RegisterUser } from './Register';
+import { IRegisterFormFields, RegisterFormFields, registerFormValidationSchema } from './RegisterFormFields';
 
-export const formData: FormProps<IRegister> = {
+export const formDataWithInitial: FormProps<IRegisterFormFields> = {
     formFields: [
         {
             placeholder: 'First name',
             type: 'string',
             label: 'First name',
             name: 'firstName',
-            rules: { required: 'First name is required' },
             onTextChange: null,
         },
         {
             placeholder: 'Last name',
             type: 'string',
             label: 'Last Name',
-            name: 'lastNames',
-            rules: { required: 'Last name is required' },
+            name: 'lastName',
             onTextChange: null,
         },
         {
@@ -24,7 +22,6 @@ export const formData: FormProps<IRegister> = {
             type: 'email',
             label: 'E-mail',
             name: 'email',
-            rules: { required: 'E-mail is required' },
             onTextChange: null,
         },
         {
@@ -32,10 +29,69 @@ export const formData: FormProps<IRegister> = {
             type: 'password',
             label: 'Password',
             name: 'password',
-            rules: { required: 'Password name is required' },
+            onTextChange: null,
+        },
+        {
+            placeholder: '',
+            type: 'password',
+            label: 'Confirm Password',
+            name: 'passwordConfirmation',
             onTextChange: null,
         },
     ],
     submitBtnLabel: 'Register',
-    formDefaultValues: new RegisterUser('Wafaa', 'Nasr', 'Wafaa@abc.de', 'veryStrongP@ssword'),
+    formDefaultValues: new RegisterFormFields(
+        'Wafaa',
+        'Nasr',
+        'Wafaa@abc.de',
+        'veryStrongP@ssword',
+        'veryStrongP@ssword',
+    ),
+    validationSchema: registerFormValidationSchema,
+    onSubmitCb: () => console.log('form submitted'),
+};
+
+export const formDataWithOutInitial: FormProps<IRegisterFormFields> = {
+    formFields: [
+        {
+            placeholder: 'First name',
+            type: 'string',
+            label: 'First name',
+            name: 'firstName',
+            onTextChange: null,
+        },
+        {
+            placeholder: 'Last name',
+            type: 'string',
+            label: 'Last Name',
+            name: 'lastName',
+            onTextChange: null,
+        },
+        {
+            placeholder: 'abc@domain.com',
+            type: 'email',
+            label: 'E-mail',
+            name: 'email',
+            onTextChange: null,
+        },
+        {
+            placeholder: '',
+            type: 'password',
+            label: 'Password',
+            name: 'password',
+            onTextChange: null,
+        },
+        {
+            placeholder: '',
+            type: 'password',
+            label: 'Confirm Password',
+            name: 'passwordConfirmation',
+            onTextChange: null,
+        },
+    ],
+    submitBtnLabel: 'Register',
+    formDefaultValues: new RegisterFormFields('', '', '', '', ''),
+    validationSchema: registerFormValidationSchema,
+    validationMode: 'all',
+    onSubmitCb: () => console.log('form submitted'),
 };
