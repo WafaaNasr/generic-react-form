@@ -40,25 +40,27 @@ const Form = <T extends Record<string, any>>({
         trigger(fieldName as any);
         setFormValues(getValues());
     };
-    console.log(errors);
     return formState.isSubmitSuccessful ? (
         <Message text="Form submitted successfully" messageType={MessageType.Info} />
     ) : (
-            <FormContainer onSubmit={handleSubmit(onSubmitCb)}>
-                {formFields.map((textField) => (
-                    <TextField
-                        {...textField}
-                        value={formValues[textField.name]}
-                        key={textField.name}
-                        onTextChange={setFieldValue(textField.name)}
-                        error={errors[textField.name]}
-                    />
-                ))}
-                <Button type="submit" parentHasErrors={hasErrors > 0 || formState.isSubmitting || formState.isSubmitSuccessful}>
-                    {submitBtnLabel}
-                </Button>
-            </FormContainer>
-        );
+        <FormContainer onSubmit={handleSubmit(onSubmitCb)}>
+            {formFields.map((textField) => (
+                <TextField
+                    {...textField}
+                    value={formValues[textField.name]}
+                    key={textField.name}
+                    onTextChange={setFieldValue(textField.name)}
+                    error={errors[textField.name]}
+                />
+            ))}
+            <Button
+                type="submit"
+                parentHasErrors={hasErrors > 0 || formState.isSubmitting || formState.isSubmitSuccessful}
+            >
+                {submitBtnLabel}
+            </Button>
+        </FormContainer>
+    );
 };
 
 export default Form;
