@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 export type LabelProps = React.LabelHTMLAttributes<HTMLLabelElement> & {
     htmlFor: string;
-    children: ReactNode
+    children: ReactNode;
 };

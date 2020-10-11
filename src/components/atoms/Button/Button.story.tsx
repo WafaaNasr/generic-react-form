@@ -6,12 +6,16 @@ import StoryContainer from '../../../../.storybook/components/StoryContainer/Sto
 import Button from './Button.component';
 import markdown from './Button.story.md';
 
-storiesOf('components/atoms/Button', module).add('Primary Button', () => (
-    <StoryContainer>
-        <Button parentHasErrors={false} onClick={action('Button clicked')}>
-            Click me!
-        </Button>
-    </StoryContainer>
-), {
-    notes: markdown
-});
+storiesOf('components/atoms/Button', module).add(
+    'Primary Button',
+    () => (
+        <StoryContainer>
+            <Button parentHasErrors={false} onClick={action('Button clicked')}>
+                Click me!
+            </Button>
+        </StoryContainer>
+    ),
+    {
+        notes: markdown,
+    },
+);
