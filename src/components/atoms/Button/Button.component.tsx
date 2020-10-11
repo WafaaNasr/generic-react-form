@@ -4,7 +4,7 @@ import { ReturnedReactComponent } from '../../../common.types';
 import { ButtonContainer, ButtonWrapper } from './Button.styles';
 import { ButtonProps } from './Button.types';
 
-const Button = ({ children, onClick, parentHasErrors, ...otherProps }: ButtonProps): ReturnedReactComponent => {
+const Button = ({ children, onClick, parentHasErrors = false, ...otherProps }: ButtonProps): ReturnedReactComponent => {
     if (!children) return null;
     return (
         <ButtonContainer>

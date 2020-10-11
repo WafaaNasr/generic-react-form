@@ -4,7 +4,7 @@ import useGenericForm from '../../../hooks/useGenericForm/useGenericForm';
 
 import TextField from '../../molecules/TextField/TextField.component';
 import Button from '../../atoms/Button/Button.component';
-import Message from '../../atoms/Alert/Alert';
+import Alert from '../../atoms/Alert/Alert';
 
 import { FormProps } from './Form.types';
 import { FormContainer } from './Form.styles';
@@ -41,7 +41,7 @@ const Form = <T extends Record<string, any>>({
         setFormValues(getValues());
     };
     return formState.isSubmitSuccessful ? (
-        <Message text={successMessage} messageType={MessageType.Success} />
+        <Alert text={successMessage} messageType={MessageType.Success} />
     ) : (
         <FormContainer onSubmit={handleSubmit(onSubmitCb)}>
             {formFields.map((textField) => (

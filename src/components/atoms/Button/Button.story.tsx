@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions';
 
 import StoryContainer from '../../../../.storybook/components/StoryContainer/StoryContainer';
 import Button from './Button.component';
+import markdown from './Button.story.md';
 
 storiesOf('components/atoms/Button', module).add('Primary Button', () => (
     <StoryContainer>
@@ -11,4 +12,6 @@ storiesOf('components/atoms/Button', module).add('Primary Button', () => (
             Click me!
         </Button>
     </StoryContainer>
-));
+), {
+    notes: markdown
+});
