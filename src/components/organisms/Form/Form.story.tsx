@@ -5,7 +5,7 @@ import StoryContainer from '../../../../.storybook/components/StoryContainer/Sto
 import Form from './Form.component';
 import { formData } from './Form.data';
 
-storiesOf('components/organisms/Form', module).add('Form', () => (
+storiesOf('components/organisms/Form', module).add('Signin Form', () => (
     <StoryContainer>
         <Form {...formData} />
     </StoryContainer>
