@@ -1,27 +1,27 @@
 import { FormProps } from './Form.types';
 import * as yup from 'yup';
 
-interface ISignInFormFields {
+export interface ISignInFormFields {
     username: string;
     password: string;
 }
 
 class SignInFormFields implements ISignInFormFields {
-    constructor(public username: string, public password: string) {
+    constructor (public username: string, public password: string) {
         return { username, password };
     }
 }
 
 export const signInFormValidationSchema = (() =>
     yup.object().shape({
-        username: yup.string().required('First name is required'),
+        username: yup.string().required('First name is required').matches(/^Wooga|wooga/, 'Department must start with Wooga'),
         password: yup.string().required('Password is required'),
     }))();
 
 export const formData: FormProps<ISignInFormFields> = {
     formFields: [
         {
-            placeholder: 'Username',
+            placeholder: 'Wooga.username',
             type: 'string',
             label: 'Username',
             name: 'username',
@@ -33,7 +33,7 @@ export const formData: FormProps<ISignInFormFields> = {
             name: 'password',
         },
     ],
-    submitBtnLabel: 'Submit',
+    submitBtnLabel: 'Sign in',
     validationSchema: signInFormValidationSchema,
     formDefaultValues: new SignInFormFields('', ''),
     onSubmitCb: (formData) => {
