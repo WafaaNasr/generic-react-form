@@ -37,9 +37,9 @@ export const formData: FormProps<ISignInFormFields> = {
     ],
     submitBtnLabel: 'Submit',
     validationSchema: signInFormValidationSchema,
-    validationMode:'onBlur',
+    validationMode: 'onBlur',
     formDefaultValues: new SignInFormFields('', ''),
     onSubmitCb: (formData) => {
-        console.log('Submitted',formData);
+        console.log('Submitted', formData);
     },
 };
