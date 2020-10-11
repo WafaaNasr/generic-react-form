@@ -1,7 +1,7 @@
 import { TextFieldProps } from './TextField.types';
 
 const data: TextFieldProps = {
-    placeholder: 'Wafaa',
+    placeholder: 'user x',
     name: 'name',
     type: 'text',
     label: 'Name',
