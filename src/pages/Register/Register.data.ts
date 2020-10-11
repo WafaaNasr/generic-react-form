@@ -6,7 +6,7 @@ export const formDataWithInitial: FormProps<IRegisterFormFields> = {
         {
             placeholder: 'ex: Wooga.X',
             type: 'string',
-            label: 'Department name',
+            label: 'Department',
             name: 'department',
         },
         {
@@ -47,7 +47,7 @@ export const formDataWithInitial: FormProps<IRegisterFormFields> = {
         'Wafaa@abc.de',
         'veryStrongP@ssword',
         'veryStrongP@ssword',
-        'Wooga.Engineering'
+        'Wooga.Engineering',
     ),
     validationSchema: registerFormValidationSchema,
     onSubmitCb: () => console.log('form submitted'),

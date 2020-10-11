@@ -5,9 +5,7 @@ export interface IValidationFormFields<T> {
     formDefaultValues: T;
     validationSchema: ObjectSchema;
 }
-export interface IGenericFormProps<T> extends IValidationFormFields<T> {
-
-}
+export type IGenericFormProps<T> = IValidationFormFields<T>;
 
 export interface PostDataResult<T> {
     success: boolean;

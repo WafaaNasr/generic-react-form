@@ -7,7 +7,7 @@ interface ISignInFormFields {
 }
 
 class SignInFormFields implements ISignInFormFields {
-    constructor (public username: string, public password: string) {
+    constructor(public username: string, public password: string) {
         return { username, password };
     }
 }
