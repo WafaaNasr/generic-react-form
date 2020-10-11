@@ -8,7 +8,7 @@ const useGenericForm = <T>({
     validationSchema,
     validationMode = 'onBlur',
 }: IGenericFormProps<T>) => {
-    const { handleSubmit, register, unregister, errors, formState, reset, setValue, getValues } = useForm<T>({
+    const { handleSubmit, register, unregister, errors, formState, reset, setValue, getValues, trigger } = useForm<T>({
         defaultValues: formDefaultValues as any,
         resolver: yupResolver(validationSchema),
         mode: validationMode,
@@ -31,7 +31,7 @@ const useGenericForm = <T>({
         };
     }, [register, unregister, formDefaultValues]);
 
-    return { handleSubmit, register, setValue, getValues, errors, formState };
+    return { handleSubmit, register, setValue, getValues, errors, formState, trigger };
 };
 
 export default useGenericForm;
