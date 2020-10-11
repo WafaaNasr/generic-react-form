@@ -1,9 +1,8 @@
 import { FormProps } from './Form.types';
 
 export const formData: FormProps = {
-    textFields: [
+    formFields: [
         {
-            key: 'username',
             placeholder: 'Username',
             type: 'string',
             label: 'Username',
@@ -12,7 +11,6 @@ export const formData: FormProps = {
             onTextChange: null,
         },
         {
-            key: 'password',
             placeholder: 'Username',
             type: 'password',
             label: 'Password',
@@ -21,4 +19,5 @@ export const formData: FormProps = {
             onTextChange: null,
         },
     ],
+    submitBtnLabel: 'Submit',
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Label from '../../atoms/Label/Label';
+import Label from '../../atoms/Label/Label.component';
 
 import { ReturnedReactComponent } from '../../../common.types';
 import { TextFieldProps } from './TextField.types';
@@ -27,7 +27,7 @@ const TextField = ({
                 id={name}
                 name={name}
                 type={type}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => onTextChange(e)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => onTextChange && onTextChange(e)}
                 ref={register && register(rules)}
                 error={error.message}
             />

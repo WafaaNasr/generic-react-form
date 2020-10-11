@@ -7,7 +7,7 @@ import Message from './Message';
 import { MessageType } from './Message.types';
 import { text } from './Message.data';
 
-storiesOf('atoms/Message', module)
+storiesOf('components/atoms/Message', module)
     .add('Message Info', () => (
         <StoryContainer>
             <Message messageType={MessageType.Info} text={text} />

@@ -7,7 +7,6 @@ export type TextFieldProps = React.InputHTMLAttributes<HTMLInputElement> &
         label: string;
         name: string;
         rules?: ValidationRules;
-        key?: string;
         error?: FieldErrors;
         onTextChange: ((e: React.ChangeEvent<HTMLInputElement>) => void) | null;
     };
