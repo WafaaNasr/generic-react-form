@@ -16,7 +16,6 @@ const Form = <T extends Record<string, any>>({
     submitBtnLabel,
     formDefaultValues,
     validationSchema,
-    validationMode,
     onSubmitCb,
     successMessage,
     errorMessage,
@@ -24,7 +23,6 @@ const Form = <T extends Record<string, any>>({
     const { handleSubmit, errors, formState, setValue, getValues, trigger } = useGenericForm<T>({
         formDefaultValues,
         validationSchema,
-        validationMode: validationMode,
     });
 
     const [formValues, setFormValues] = useState(formDefaultValues);

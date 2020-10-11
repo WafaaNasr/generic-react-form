@@ -1,6 +1,7 @@
 import * as yup from 'yup';
 
 export interface IRegisterFormFields {
+    department:string;
     firstName: string;
     lastName: string;
     email: string;
@@ -15,6 +16,7 @@ export class RegisterFormFields implements IRegisterFormFields {
         public email: string,
         public password: string,
         public passwordConfirmation: string,
+        public department: string
     ) {
         return {
             firstName,
@@ -22,12 +24,15 @@ export class RegisterFormFields implements IRegisterFormFields {
             email,
             password,
             passwordConfirmation,
+            department
         };
     }
+ 
 }
 
 export const registerFormValidationSchema = (() =>
     yup.object().shape({
+        department:yup.string().required('Department is required').matches(/^Wooga|wooga/,'Department must start with Wooga'),
         firstName: yup.string().required('First name is required'),
         lastName: yup.string().required('Last name is required'),
         email: yup.string().email().required('Email is required'),

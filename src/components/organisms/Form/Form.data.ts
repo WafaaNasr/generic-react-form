@@ -7,7 +7,7 @@ interface ISignInFormFields {
 }
 
 class SignInFormFields implements ISignInFormFields {
-    constructor(public username: string, public password: string) {
+    constructor (public username: string, public password: string) {
         return { username, password };
     }
 }
@@ -25,19 +25,16 @@ export const formData: FormProps<ISignInFormFields> = {
             type: 'string',
             label: 'Username',
             name: 'username',
-            onTextChange: null,
         },
         {
             placeholder: 'Username',
             type: 'password',
             label: 'Password',
             name: 'password',
-            onTextChange: null,
         },
     ],
     submitBtnLabel: 'Submit',
     validationSchema: signInFormValidationSchema,
-    validationMode: 'onBlur',
     formDefaultValues: new SignInFormFields('', ''),
     onSubmitCb: (formData) => {
         console.log('Submitted', formData);

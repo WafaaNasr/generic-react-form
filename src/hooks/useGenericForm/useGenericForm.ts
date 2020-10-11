@@ -5,13 +5,11 @@ import { IGenericFormProps } from './useGenericForm.types';
 
 const useGenericForm = <T>({
     formDefaultValues,
-    validationSchema,
-    validationMode = 'onBlur',
+    validationSchema
 }: IGenericFormProps<T>) => {
     const { handleSubmit, register, unregister, errors, formState, reset, setValue, getValues, trigger } = useForm<T>({
         defaultValues: formDefaultValues as any,
-        resolver: yupResolver(validationSchema),
-        mode: validationMode,
+        resolver: yupResolver(validationSchema)
     });
     const formFields: any | undefined = validationSchema.fields && Object.keys(validationSchema.fields);
 
