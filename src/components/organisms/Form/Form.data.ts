@@ -7,14 +7,17 @@ export interface ISignInFormFields {
 }
 
 class SignInFormFields implements ISignInFormFields {
-    constructor (public username: string, public password: string) {
+    constructor(public username: string, public password: string) {
         return { username, password };
     }
 }
 
 export const signInFormValidationSchema = (() =>
     yup.object().shape({
-        username: yup.string().required('First name is required').matches(/^Wooga|wooga/, 'Department must start with Wooga'),
+        username: yup
+            .string()
+            .required('First name is required')
+            .matches(/^Wooga|wooga/, 'Department must start with Wooga'),
         password: yup.string().required('Password is required'),
     }))();
 

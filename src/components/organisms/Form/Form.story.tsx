@@ -6,10 +6,14 @@ import Form from './Form.component';
 import { formData, ISignInFormFields } from './Form.data';
 import markdown from './Form.story.md';
 
-storiesOf('components/organisms/Form', module).add('Signin Form', () => (
-    <StoryContainer>
-        <Form<ISignInFormFields> {...formData} />
-    </StoryContainer>
-), {
-    notes: markdown
-});
+storiesOf('components/organisms/Form', module).add(
+    'Signin Form',
+    () => (
+        <StoryContainer>
+            <Form<ISignInFormFields> {...formData} />
+        </StoryContainer>
+    ),
+    {
+        notes: markdown,
+    },
+);
