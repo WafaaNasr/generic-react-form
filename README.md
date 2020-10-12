@@ -12,8 +12,9 @@ Shared library built on [Storybook](https://storybook.js.org/) to generate React
 ## Documentation
  - Library is built on Storybook and uses Atomic Design Principles [readmore](https://xd.adobe.com/ideas/process/ui-design/atomic-design-principles-methodology-101/)
 
- - Each component has extra two component `xxx.story.tsx` for component's interaction and `xxx.story.md` for component's documentation
- ex. `Register.story.md`![Alt text](images/Comonent-notes.png?raw=true "How To Use")
+ - Each component has two extra components
+    - `xxx.story.tsx` for component's interaction 
+    - `xxx.story.md` for component's documentation ex. `Register.story.md`![Alt text](images/Comonent-notes.png?raw=true "How To Use")
 
  -`<Form<T> />` the main organism's component, Generic accepts from the using component T type and other form props for more info please see `src/components/organisms/Form/Form.story.md`.
 
