@@ -45,7 +45,7 @@ const Form = <T extends Record<string, any>>({
     ) : formState.isSubmitSuccessful ? (
         <Alert text={successMessage} messageType={MessageType.Success} />
     ) : (
-        <FormContainer data-testid='form' onSubmit={handleSubmit(onSubmitCb)}>
+        <FormContainer data-testid="form" onSubmit={handleSubmit(onSubmitCb)}>
             {formFields.map((textField) => (
                 <TextField
                     {...textField}
@@ -56,7 +56,7 @@ const Form = <T extends Record<string, any>>({
                 />
             ))}
             <Button
-               data-testid='submit-btn'
+                data-testid="submit-btn"
                 type="submit"
                 parentHasErrors={hasErrors > 0 || formState.isSubmitting || formState.isSubmitSuccessful}
             >
