@@ -16,7 +16,12 @@ Shared library built on [Storybook](https://storybook.js.org/) to generate React
     - `xxx.story.tsx` for component's interaction 
     - `xxx.story.md` for component's documentation ex. `Register.story.md`![Alt text](images/Comonent-notes.png?raw=true "How To Use")
 
- -`<Form<T> />` the main organism's component, Generic accepts from the using component T type and other form props for more info please see `src/components/organisms/Form/Form.story.md`.
+- `<Form<T> />`  
+    -  Component is added as Organism where it consildates textfields, user custom validations, form schema and Alert Atom's component.
+    
+    - For this version the `Form` component only supports TextFields, later it will accept different form-input's types and will render accordionaly 
+
+    - It accepts Generics, where it can be used in different pages with different data types for more info please check `src/components/organisms/Form/Form.story.md`.
 
 ## How to use `<Form<T>/>`
 
