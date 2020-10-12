@@ -5,17 +5,17 @@
 Shared library built on [Storybook](https://storybook.js.org/) to generate React generic forms supports schema-based form validation using [React-Form-Hook](https://react-hook-form.com/) with [Yup](https://medium.com/@rossbulat/introduction-to-yup-object-validation-in-react-9863af93dc0e)
 
 ## Installing
-1. Pull the repo.
+1. Clone the repo `git clone https://github.com/WafaaNasr/generic-react-form`
 2. Run `yarn install`.
-3. Run ` yarn start` which will automatically call `yarn start-storybook`
+3. Run ` yarn start` which will start  `yarn start-storybook`
 
 ## Documentation
  - Library is built on Storybook and uses Atomic Design Principles [readmore](https://xd.adobe.com/ideas/process/ui-design/atomic-design-principles-methodology-101/)
 
- - Each component holds presentational component `xxx.story.tsx` for component's interaction and how to use in the notes section
+ - Each component has extra two component `xxx.story.tsx` for component's interaction and `xxx.story.md` for component's documentation
  ex. `Register.story.md`![Alt text](images/Comonent-notes.png?raw=true "How To Use")
 
- -`<Form<T> />` the main organism's component is Generic accepts from the using component T type and other form props for more info please see `src/components/organisms/Form/Form.story.md`.
+ -`<Form<T> />` the main organism's component, Generic accepts from the using component T type and other form props for more info please see `src/components/organisms/Form/Form.story.md`.
 
 ## How to use `<Form<T>/>`
 
