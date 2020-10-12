@@ -5,3 +5,8 @@ export const FormContainer = styled.form`
     flex-direction: column;
     width: 100%;
 `;
+
+export const LoadingWrapper = styled.p`
+    width: 100%;
+    font: inherit;
+`;

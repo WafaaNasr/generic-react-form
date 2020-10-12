@@ -58,6 +58,12 @@ export const formDataWithInitial: FormProps<IRegisterFormFields> = {
 export const formDataWithOutInitial: FormProps<IRegisterFormFields> = {
     formFields: [
         {
+            placeholder: 'ex: Wooga.X',
+            type: 'string',
+            label: 'Department',
+            name: 'department',
+        },
+        {
             placeholder: 'First name',
             type: 'string',
             label: 'First name',
@@ -89,7 +95,7 @@ export const formDataWithOutInitial: FormProps<IRegisterFormFields> = {
         },
     ],
     submitBtnLabel: 'Register',
-    formDefaultValues: new RegisterFormFields('', '', '', '', ''),
+    formDefaultValues: new RegisterFormFields('', '', '', '', '', ''),
     validationSchema: registerFormValidationSchema,
     onSubmitCb: () => console.log('form submitted'),
     successMessage: 'Register Submitted Successfully!!!',

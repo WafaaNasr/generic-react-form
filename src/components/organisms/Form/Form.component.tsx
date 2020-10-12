@@ -7,7 +7,7 @@ import Button from '../../atoms/Button/Button.component';
 import Alert from '../../atoms/Alert/Alert';
 
 import { FormProps } from './Form.types';
-import { FormContainer } from './Form.styles';
+import { FormContainer, LoadingWrapper } from './Form.styles';
 import { ReturnedReactComponent } from '../../../common.types';
 import { MessageType } from '../../atoms/Alert/Alert.types';
 
@@ -40,7 +40,9 @@ const Form = <T extends Record<string, any>>({
         trigger(fieldName as any);
         setFormValues(getValues());
     };
-    return formState.isSubmitSuccessful ? (
+    return formState.isSubmitting ? (
+        <LoadingWrapper>Loading.......</LoadingWrapper>
+    ) : formState.isSubmitSuccessful ? (
         <Alert text={successMessage} messageType={MessageType.Success} />
     ) : (
         <FormContainer onSubmit={handleSubmit(onSubmitCb)}>

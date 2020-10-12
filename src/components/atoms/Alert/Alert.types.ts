@@ -6,6 +6,6 @@ export enum MessageType {
 }
 
 export type MessageProps = {
-    messageType: MessageType;
+    messageType?: MessageType;
     text: string;
 };

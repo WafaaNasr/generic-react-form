@@ -5,7 +5,7 @@ interface MessageContainerDiv {
     type: string;
 }
 
-type MessageContainerProps = {
+export type MessageContainerProps = {
     type: 'warning' | 'error' | 'info' | 'success';
     theme: ProjectDefaultTheme;
 };
